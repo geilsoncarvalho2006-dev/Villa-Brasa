@@ -1,0 +1,1551 @@
+<div class="admin-container">
+
+  <!-- ============================================ -->
+  <!-- SIDEBAR ESQUERDA                              -->
+  <!-- ============================================ -->
+  <aside class="sidebar">
+
+    <!-- Logo Villa Brasa -->
+    <div class="sidebar-logo">
+      <div class="logo-icone">🔥</div>
+      <div>
+        <h2>Villa Brasa</h2>
+        <span>Administração</span>
+      </div>
+    </div>
+
+    <!-- Avatar do admin -->
+    <div class="sidebar-avatar">
+      <div class="avatar-circulo"></div>
+    </div>
+
+    <!-- Menu de navegação -->
+    <nav class="sidebar-menu">
+      <button class="menu-item" [class.active]="abaSidebar === 'dashboard'" (click)="abaSidebar = 'dashboard'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7"/>
+          <rect x="14" y="3" width="7" height="7"/>
+          <rect x="14" y="14" width="7" height="7"/>
+          <rect x="3" y="14" width="7" height="7"/>
+        </svg>
+        <span>Dashboard</span>
+      </button>
+
+      <button class="menu-item" [class.active]="abaSidebar === 'cardapio'" (click)="abaSidebar = 'cardapio'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="8" y1="6" x2="21" y2="6"/>
+          <line x1="8" y1="12" x2="21" y2="12"/>
+          <line x1="8" y1="18" x2="21" y2="18"/>
+          <line x1="3" y1="6" x2="3.01" y2="6"/>
+          <line x1="3" y1="12" x2="3.01" y2="12"/>
+          <line x1="3" y1="18" x2="3.01" y2="18"/>
+        </svg>
+        <span>Cardápio</span>
+      </button>
+
+      <button class="menu-item" [class.active]="abaSidebar === 'categorias'" (click)="abaSidebar = 'categorias'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+        <span>Categorias</span>
+      </button>
+
+      <button class="menu-item" [class.active]="abaSidebar === 'pedidos'" (click)="abaSidebar = 'pedidos'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+          <line x1="12" y1="22.08" x2="12" y2="12"/>
+        </svg>
+        <span>Pedidos</span>
+      </button>
+
+      <button class="menu-item" [class.active]="abaSidebar === 'banners'" (click)="abaSidebar = 'banners'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+          <polyline points="2 17 12 22 22 17"/>
+          <polyline points="2 12 12 17 22 12"/>
+        </svg>
+        <span>Banners</span>
+      </button>
+
+      <button class="menu-item" [class.active]="abaSidebar === 'delivery'" (click)="abaSidebar = 'delivery'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="3" width="15" height="13"/>
+          <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+          <circle cx="5.5" cy="18.5" r="2.5"/>
+          <circle cx="18.5" cy="18.5" r="2.5"/>
+        </svg>
+        <span>Delivery</span>
+      </button>
+
+      <button class="menu-item" [class.active]="abaSidebar === 'configuracoes'" (click)="abaSidebar = 'configuracoes'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+        <span>Configurações</span>
+      </button>
+    </nav>
+
+    <!-- Botão Sair -->
+    <div class="sidebar-footer">
+      <button class="btn-sair" (click)="sair()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/>
+          <line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+        <span>Sair</span>
+      </button>
+    </div>
+
+  </aside>
+
+  <!-- ============================================ -->
+  <!-- ÁREA PRINCIPAL                                -->
+  <!-- ============================================ -->
+  <main class="main-content">
+
+    <!-- ============================ -->
+    <!-- ABA: DASHBOARD               -->
+    <!-- ============================ -->
+    <div *ngIf="abaSidebar === 'dashboard'" class="conteudo-dashboard">
+
+      <div class="conteudo-header">
+        <div>
+          <h1>Dashboard</h1>
+          <p>Visão geral do restaurante</p>
+        </div>
+      </div>
+
+      <div class="kpis-grid-dash">
+
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <span class="kpi-titulo">Receita Hoje</span>
+            <span class="kpi-valor">R$ {{receitaHoje.toFixed(2).replace('.', ',')}}</span>
+            <span class="kpi-sub">{{pedidosHoje}} pedidos</span>
+          </div>
+          <div class="kpi-icone kpi-icone-verde">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <span class="kpi-titulo">Cancelados Hoje</span>
+            <span class="kpi-valor">R$ {{receitaCancelada.toFixed(2).replace('.', ',')}}</span>
+            <span class="kpi-sub kpi-sub-negativo">{{totalCancelados}} pedidos</span>
+          </div>
+          <div class="kpi-icone kpi-icone-vermelho">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="15" y1="9" x2="9" y2="15"/>
+              <line x1="9" y1="9" x2="15" y2="15"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <span class="kpi-titulo">Pedidos Hoje</span>
+            <span class="kpi-valor">{{pedidosHoje}}</span>
+            <span class="kpi-sub">{{pedidosHoje}} pedidos</span>
+          </div>
+          <div class="kpi-icone kpi-icone-azul">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <span class="kpi-titulo">Em Preparação</span>
+            <span class="kpi-valor">{{pedidosEmPreparacao}}</span>
+            <span class="kpi-sub">{{pedidosEmPreparacao}} aguardando</span>
+          </div>
+          <div class="kpi-icone kpi-icone-laranja">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <span class="kpi-titulo">Estoque Baixo</span>
+            <span class="kpi-valor">{{totalEstoqueBaixo}}</span>
+            <span class="kpi-sub">{{totalEstoqueBaixo}} itens</span>
+          </div>
+          <div class="kpi-icone kpi-icone-vermelho">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+        </div>
+            </div>
+
+      <div class="dash-row-2">
+
+        <div class="dash-card">
+          <h3 class="dash-card-titulo">Pedidos Recentes</h3>
+          <div class="lista-pedidos-recentes">
+            <div *ngFor="let p of pedidosRecentesTop6" class="pedido-recente">
+              <div class="pedido-info">
+                <span class="pedido-cliente">{{ p.numero || p.id }}</span>
+                <span class="pedido-hora">{{p.hora}}</span>
+              </div>
+              <div class="pedido-valor-status">
+                <span class="pedido-valor">R$ {{p.valor.toFixed(2).replace('.', ',')}}</span>
+                <span class="pedido-status-badge" [ngClass]="p.statusClass">{{p.status}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <h3 class="dash-card-titulo titulo-com-icone">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                 fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+            Estoque Baixo
+          </h3>
+          <div class="lista-estoque-baixo">
+            <div *ngFor="let p of produtosEstoqueBaixo" class="estoque-item">
+              <img [src]="p.imagem" [alt]="p.nome" class="estoque-img" />
+              <div class="estoque-info">
+                <span class="estoque-nome">{{p.nome}}</span>
+                <span class="estoque-categoria">{{p.categoria}}</span>
+              </div>
+              <div class="estoque-qtd">
+                <span class="estoque-num" [class.zero]="p.estoque === 0">{{p.estoque}}</span>
+                <span class="estoque-label">unidades</span>
+              </div>
+            </div>
+            <div *ngIf="produtosEstoqueBaixo.length === 0" class="estoque-vazio">
+              ✅ Todos os produtos com estoque OK!
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="dash-card card-vendidos">
+        <h3 class="dash-card-titulo titulo-com-icone">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+               fill="none" stroke="#a16207" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+            <path d="M4 22h16"/>
+            <path d="M10 22V14"/>
+            <path d="M14 22V14"/>
+            <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/>
+          </svg>
+          Produtos Mais Vendidos
+        </h3>
+
+        <div class="lista-mais-vendidos">
+          <div *ngFor="let p of produtosMaisVendidos" class="vendido-item">
+            <span class="vendido-posicao" [ngClass]="'pos-' + p.posicao">{{p.posicao}}</span>
+            <img [src]="imagemProduto(p.nome)" [alt]="p.nome" class="vendido-img" />
+            <div class="vendido-info">
+              <span class="vendido-nome">
+                {{p.nome}}
+                <span *ngIf="p.posicao === 1" class="badge-top1">⭐ Top 1</span>
+              </span>
+              <span class="vendido-categoria">{{categoriaProduto(p.nome)}}</span>
+            </div>
+            <div class="vendido-stats">
+              <span class="vendido-qtd">{{p.vendidos}}</span>
+              <span class="vendido-label">vendidos</span>
+              <span class="vendido-receita">R$ {{p.receita.toFixed(2).replace('.', ',')}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-card">
+        <h3 class="dash-card-titulo">Visão Geral do Cardápio</h3>
+        <div class="kpis-cardapio">
+          <div class="kpi-mini kpi-mini-cinza">
+            <span class="kpi-mini-label">Total de Itens</span>
+            <span class="kpi-mini-num">{{totalItens}}</span>
+          </div>
+          <div class="kpi-mini kpi-mini-verde">
+            <span class="kpi-mini-label">Itens Ativos</span>
+            <span class="kpi-mini-num">{{totalItensAtivos}}</span>
+          </div>
+          <div class="kpi-mini kpi-mini-vermelho">
+            <span class="kpi-mini-label">Itens Inativos</span>
+            <span class="kpi-mini-num">{{totalItensInativos}}</span>
+          </div>
+          <div class="kpi-mini kpi-mini-azul">
+            <span class="kpi-mini-label">Categorias</span>
+            <span class="kpi-mini-num">{{totalCategorias}}</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============================ -->
+    <!-- ABA: CARDÁPIO                -->
+    <!-- ============================ -->
+    <div *ngIf="abaSidebar === 'cardapio'" class="conteudo-cardapio">
+
+      <div class="conteudo-header">
+        <div>
+          <h1>Gerenciar Cardápio</h1>
+          <p>Adicione, edite ou remova itens do cardápio</p>
+        </div>
+        <button class="btn-adicionar" (click)="abrirModalAdicionar()">
+          <span>+</span> Adicionar Item
+        </button>
+      </div>
+
+      <div class="filtros-bar">
+        <div class="busca-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" placeholder="Buscar pratos..." [(ngModel)]="buscaProduto" />
+        </div>
+
+        <select class="select-categoria" [(ngModel)]="categoriaFiltro">
+          <option *ngFor="let cat of categorias" [value]="cat">
+            {{ cat === 'Todas' ? 'Todas Categorias' : cat }}
+          </option>
+        </select>
+      </div>
+
+      <div class="produtos-grid">
+
+        <div class="produto-card" *ngFor="let produto of produtosFiltrados">
+          <div class="produto-imagem-wrapper">
+            <img [src]="produto.imagem" [alt]="produto.nome" />
+
+            <button class="selo-disponivel"
+                    [class.indisponivel]="!produto.disponivel"
+                    (click)="toggleDisponivel(produto)"
+                    [title]="produto.disponivel ? 'Disponível (clique para ocultar)' : 'Oculto (clique para mostrar)'">
+              <svg *ngIf="produto.disponivel" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              <svg *ngIf="!produto.disponivel" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                <line x1="1" y1="1" x2="23" y2="23"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="produto-conteudo">
+            <div class="produto-titulo-row">
+              <div class="produto-info">
+                <h3>{{produto.nome}}</h3>
+                <p class="produto-categoria">{{produto.categoria}}</p>
+              </div>
+              <span class="produto-preco">R$ {{produto.preco.toFixed(2).replace('.', ',')}}</span>
+            </div>
+
+            <p class="produto-descricao">{{produto.descricao}}</p>
+
+            <span class="badge-estoque" [ngClass]="classificarEstoque(produto.estoque)">
+              {{textoEstoque(produto.estoque)}} ({{produto.estoque}})
+            </span>
+
+            <div class="produto-acoes">
+              <button class="btn-editar" (click)="abrirModalEditar(produto)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+                Editar
+              </button>
+              <button class="btn-excluir" (click)="excluirProduto(produto)" title="Excluir">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="3 6 5 6 21 6"/>
+                  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                  <line x1="10" y1="11" x2="10" y2="17"/>
+                  <line x1="14" y1="11" x2="14" y2="17"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div *ngIf="produtosFiltrados.length === 0" class="grid-vazio">
+        <h3>Nenhum produto encontrado</h3>
+        <p>Tente outra busca ou categoria.</p>
+      </div>
+
+    </div>
+
+    <!-- ============================ -->
+    <!-- ABA: CATEGORIAS              -->
+    <!-- ============================ -->
+    <div *ngIf="abaSidebar === 'categorias'" class="conteudo-categorias">
+
+      <ng-container *ngIf="!categoriaSelecionada">
+
+        <div class="conteudo-header">
+          <div>
+            <h1>Categorias</h1>
+            <p>Clique em uma categoria para gerenciar seus itens</p>
+          </div>
+        </div>
+
+        <div class="categorias-grid">
+          <div *ngFor="let cat of listaCategoriasComStats"
+               class="categoria-card"
+               (click)="abrirCategoria(cat.nome)">
+
+            <div class="categoria-topo">
+              <div class="categoria-info">
+                <h3>{{cat.nome}}</h3>
+                <span class="categoria-itens">{{cat.totalItens}} itens</span>
+              </div>
+
+              <div class="categoria-acoes">
+                <span class="categoria-bolinha"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="categoria-icone-lapis">
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="categoria-rodape">
+              <span class="categoria-ativos">{{cat.ativos}} ativos</span>
+              <span class="categoria-link">Clique para editar →</span>
+            </div>
+          </div>
+        </div>
+
+      </ng-container>
+
+      <ng-container *ngIf="categoriaSelecionada">
+
+        <button class="btn-voltar-cat" (click)="voltarParaGridCategorias()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"/>
+            <polyline points="12 19 5 12 12 5"/>
+          </svg>
+          Voltar
+        </button>
+
+        <div class="conteudo-header">
+          <div>
+            <h1>{{categoriaSelecionada}}</h1>
+            <p>{{statsCategoriaSelecionada.total}} itens · {{statsCategoriaSelecionada.ativos}} ativos</p>
+          </div>
+        </div>
+
+        <div class="categoria-detalhe-lista">
+
+          <div class="categoria-prod-card" *ngFor="let p of produtosDaCategoriaSelecionada"
+               [class.prod-inativo]="!p.disponivel">
+
+            <div class="prod-imagem-wrapper">
+              <img [src]="p.imagem" [alt]="p.nome" />
+              <div class="selo-inativo" *ngIf="!p.disponivel">INATIVO</div>
+            </div>
+
+            <div class="prod-conteudo">
+
+              <h3>{{p.nome}}</h3>
+              <p class="prod-descricao">{{p.descricao}}</p>
+
+              <div class="prod-preco-linha">
+                <span class="prod-preco">R$ {{p.preco.toFixed(2).replace('.', ',')}}</span>
+                <span class="prod-badge-status" [class.inativo]="!p.disponivel">
+                  {{p.disponivel ? 'Ativo' : 'Inativo'}}
+                </span>
+              </div>
+
+              <div class="prod-disponibilidade">
+                <span class="prod-disp-label">Disponível:</span>
+                <div class="dias-tags">
+                  <span *ngFor="let dia of todosOsDias"
+                        class="dia-tag"
+                        [class.dia-ativo]="diaMarcado(p, dia)">
+                    {{dia}}
+                  </span>
+                </div>
+              </div>
+
+              <div class="prod-acoes-cat">
+                <button class="btn-editar-disp" (click)="abrirModalDias(p)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                       fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                  </svg>
+                  Editar Disponibilidade
+                </button>
+
+                <button class="btn-desativar" *ngIf="p.disponivel" (click)="toggleDisponivel(p)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                       fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                    <line x1="1" y1="1" x2="23" y2="23"/>
+                  </svg>
+                  Desativar
+                </button>
+
+                <button class="btn-ativar" *ngIf="!p.disponivel" (click)="toggleDisponivel(p)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                       fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                  </svg>
+                  Ativar
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </ng-container>
+
+    </div>
+
+    <!-- ============================ -->
+    <!-- ABA: PEDIDOS                 -->
+    <!-- ============================ -->
+    <div *ngIf="abaSidebar === 'pedidos'" class="conteudo-pedidos">
+
+      <div class="conteudo-header">
+        <div>
+          <h1>Gerenciar Pedidos</h1>
+          <p>Acompanhe e atualize o status dos pedidos</p>
+        </div>
+      </div>
+
+      <div class="kpis-pedidos">
+        <div class="kpi-pedido-card">
+          <span class="kpi-pedido-titulo">Total</span>
+          <span class="kpi-pedido-num cor-cinza">{{totalPedidosCount}}</span>
+        </div>
+        <div class="kpi-pedido-card">
+          <span class="kpi-pedido-titulo">Pendentes</span>
+          <span class="kpi-pedido-num cor-laranja">{{pedidosPendentesCount}}</span>
+        </div>
+        <div class="kpi-pedido-card">
+          <span class="kpi-pedido-titulo">Em Preparo</span>
+          <span class="kpi-pedido-num cor-azul">{{pedidosEmPreparoCount}}</span>
+        </div>
+        <div class="kpi-pedido-card">
+          <span class="kpi-pedido-titulo">Finalizados</span>
+          <span class="kpi-pedido-num cor-verde">{{pedidosFinalizadosCount}}</span>
+        </div>
+      </div>
+
+      <div class="filtro-pedidos">
+        <label>Filtrar por status:</label>
+        <select [(ngModel)]="filtroStatusPedido" class="select-filtro-pedido">
+          <option *ngFor="let s of statusDisponiveis" [value]="s">{{s}}</option>
+        </select>
+      </div>
+
+      <div class="lista-pedidos-admin">
+
+        <div *ngFor="let pedido of pedidosFiltrados" class="pedido-card-admin"
+             [class.expandido]="pedido.expandido">
+
+          <div class="pedido-topo-admin">
+            <div class="pedido-topo-info">
+              <div class="pedido-titulo-row">
+                <h3>#{{pedido.numero || pedido.id}}</h3>
+                <span class="pedido-badge-admin" [ngClass]="pedido.statusClass">
+                  <span class="badge-bolinha"></span>
+                  {{pedido.status}}
+                </span>
+              </div>
+              <p class="pedido-cliente-admin">{{pedido.cliente}}</p>
+              <p class="pedido-data-admin">{{pedido.dataCompleta}}</p>
+            </div>
+
+            <div class="pedido-valores">
+              <span class="pedido-valor-admin">R$ {{pedido.valor.toFixed(2).replace('.', ',')}}</span>
+              <span class="pedido-pagamento">{{pedido.formaPagamento}}</span>
+            </div>
+          </div>
+
+          <div class="alterar-status-row">
+            <label>Alterar status:</label>
+            <select class="select-status-pedido"
+                    [ngModel]="pedido.status"
+                    (ngModelChange)="alterarStatusPedido(pedido, $event)">
+              <option *ngFor="let s of statusOpcoes" [value]="s">{{s}}</option>
+            </select>
+          </div>
+
+          <button class="btn-ver-detalhes" (click)="toggleExpandirPedido(pedido)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 [class.rotate-up]="pedido.expandido">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+            {{ pedido.expandido ? 'Ocultar Detalhes' : 'Ver Detalhes' }}
+          </button>
+
+          <div class="pedido-detalhes" *ngIf="pedido.expandido">
+            <div class="detalhes-divisor"></div>
+
+            <div class="detalhes-bloco">
+
+              <div class="detalhes-secao">
+                <h4>Informações do Cliente</h4>
+                <p class="info-linha"><b>Email:</b> {{pedido.email}}</p>
+                <p class="info-linha"><b>Endereço:</b> {{pedido.endereco}}</p>
+                <p class="info-linha" *ngIf="pedido.observacoes"><b>Observações:</b> {{pedido.observacoes}}</p>
+              </div>
+
+              <div class="detalhes-secao">
+                <h4>Itens do Pedido</h4>
+                <div *ngFor="let item of pedido.itens" class="detalhe-item-linha">
+                  <span>{{item.qtd}}x {{item.nome}}</span>
+                  <span>R$ {{item.valor.toFixed(2).replace('.', ',')}}</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="detalhe-total-final">
+              <span>Total</span>
+              <span>R$ {{totalItensPedido(pedido).toFixed(2).replace('.', ',')}}</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div *ngIf="pedidosFiltrados.length === 0" class="grid-vazio">
+          <h3>Nenhum pedido encontrado</h3>
+          <p>Tente outro filtro de status.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ============================ -->
+    <!-- ABA: BANNERS                 -->
+    <!-- ============================ -->
+    <div *ngIf="abaSidebar === 'banners'" class="conteudo-banners">
+
+      <div class="conteudo-header">
+        <div>
+          <h1>Gerenciar Banners</h1>
+          <p>Configure os banners da página inicial</p>
+        </div>
+        <button class="btn-adicionar" (click)="abrirModalNovoBanner()">
+          <span>+</span> Novo Banner
+        </button>
+      </div>
+
+      <h3 class="banners-secao-titulo">Preview - Como aparece para os clientes</h3>
+
+      <div class="banner-preview-wrapper" *ngIf="bannerAtualPreview">
+        <div class="banner-preview-card">
+          <img [src]="bannerAtualPreview.imagem" [alt]="bannerAtualPreview.titulo" class="banner-preview-img" />
+          <div class="banner-preview-overlay">
+            <h2 class="banner-preview-titulo">{{bannerAtualPreview.titulo}}</h2>
+            <p class="banner-preview-subtitulo">{{bannerAtualPreview.subtitulo}}</p>
+          </div>
+
+          <button class="banner-preview-seta seta-esquerda" (click)="anteriorPreviewBanner()" *ngIf="bannersAtivosPreview.length > 1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                 fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+          <button class="banner-preview-seta seta-direita" (click)="proximoPreviewBanner()" *ngIf="bannersAtivosPreview.length > 1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                 fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+
+          <div class="banner-preview-dots" *ngIf="bannersAtivosPreview.length > 1">
+            <span *ngFor="let b of bannersAtivosPreview; let i = index"
+                  class="banner-dot"
+                  [class.dot-ativo]="i === indicePreviewBanner"
+                  (click)="irParaPreviewBanner(i)"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="banner-preview-vazio" *ngIf="bannersAtivosPreview.length === 0">
+        <p>📭 Nenhum banner ativo no momento</p>
+        <small>Ative ou adicione um banner para ver o preview</small>
+      </div>
+
+      <h3 class="banners-secao-titulo">Todos os Banners</h3>
+
+      <div class="banners-lista">
+
+        <div class="banner-card-admin" *ngFor="let banner of bannersOrdenados">
+
+          <div class="banner-card-img-wrapper">
+            <img [src]="banner.imagem" [alt]="banner.titulo" />
+          </div>
+
+          <div class="banner-card-conteudo">
+
+            <div class="banner-card-cabecalho">
+              <div class="banner-card-info">
+                <div class="banner-titulo-row">
+                  <h3>{{banner.titulo}}</h3>
+                  <span class="banner-ordem-badge">Ordem: {{banner.ordem}}</span>
+                </div>
+                <p class="banner-subtitulo">{{banner.subtitulo}}</p>
+                <p class="banner-cta-linha"><b>CTA:</b> <span class="banner-cta">→ {{banner.cta}}</span></p>
+              </div>
+
+              <button class="banner-status-icone" [class.inativo]="!banner.ativo" (click)="toggleBannerAtivo(banner)"
+                      [title]="banner.ativo ? 'Banner ativo (clique para desativar)' : 'Banner inativo (clique para ativar)'">
+                <svg *ngIf="banner.ativo" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+                <svg *ngIf="!banner.ativo" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                  <line x1="1" y1="1" x2="23" y2="23"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="banner-card-acoes">
+              <button class="btn-banner-editar" (click)="abrirModalEditarBanner(banner)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+                Editar
+              </button>
+
+              <button class="btn-banner-toggle" (click)="toggleBannerAtivo(banner)">
+                {{ banner.ativo ? 'Desativar' : 'Ativar' }}
+              </button>
+
+              <button class="btn-banner-excluir" (click)="excluirBanner(banner)" title="Excluir">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="3 6 5 6 21 6"/>
+                  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                  <line x1="10" y1="11" x2="10" y2="17"/>
+                  <line x1="14" y1="11" x2="14" y2="17"/>
+                </svg>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <div *ngIf="bannersOrdenados.length === 0" class="grid-vazio">
+          <h3>Nenhum banner cadastrado</h3>
+          <p>Clique em "Novo Banner" para começar.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ============================ -->
+    <!-- ABA: CONFIGURAÇÕES           -->
+    <!-- ============================ -->
+    <div *ngIf="abaSidebar === 'configuracoes'" class="conteudo-config">
+
+      <div class="conteudo-header">
+        <div>
+          <h1>Configurações</h1>
+          <p>Gerencie as configurações do restaurante</p>
+        </div>
+      </div>
+
+      <!-- INFORMAÇÕES DO RESTAURANTE -->
+      <div class="config-card">
+        <h3 class="config-card-titulo">Informações do Restaurante</h3>
+
+        <div class="form-row">
+          <div class="form-campo">
+            <label>Nome do Restaurante</label>
+            <input type="text" [(ngModel)]="configNome" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-campo">
+            <label>Descrição</label>
+            <input type="text" [(ngModel)]="configDescricao" />
+          </div>
+        </div>
+
+        <div class="form-row form-row-2">
+          <div class="form-campo">
+            <label>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              Telefone
+            </label>
+            <input type="text" [(ngModel)]="configTelefone" />
+          </div>
+          <div class="form-campo">
+            <label>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              E-mail
+            </label>
+            <input type="email" [(ngModel)]="configEmail" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-campo">
+            <label>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Endereço
+            </label>
+            <input type="text" [(ngModel)]="configEndereco" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-campo">
+            <label>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              Horário de Funcionamento
+            </label>
+            <input type="text" [(ngModel)]="configHorario" />
+          </div>
+        </div>
+      </div>
+      <div *ngIf="abaSidebar === 'configuracoes'" style="background:#ffffff;padding:24px;margin:20px 0;border:1px solid #e0e0e0;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+  <h3 style="margin:0 0 8px 0;color:#1E293B;font-size:18px;font-weight:600;">Zona de Risco</h3>
+  <p style="color:#475569;font-size:14px;margin:0 0 20px 0;">Use estes botões pra voltar ao estado inicial. Isso vai apagar tudo que você adicionou.</p>
+  
+  <button (click)="resetarProdutos()" 
+          style="background:#f4f5f7;color:#1E293B;padding:10px 20px;margin:5px 8px 5px 0;border:1px solid #cbd5e1;border-radius:6px;cursor:pointer;font-weight:500;font-size:14px;">
+    Resetar Cardápio (volta os 39 produtos)
+  </button>
+  
+  <button (click)="resetarBanners()" 
+          style="background:#f4f5f7;color:#1E293B;padding:10px 20px;margin:5px 0;border:1px solid #cbd5e1;border-radius:6px;cursor:pointer;font-weight:500;font-size:14px;">
+    Resetar Banners (volta os 3 padrão)
+  </button>
+</div>
+      <!-- NOTIFICAÇÕES -->
+      <div class="config-card">
+        <h3 class="config-card-titulo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          Notificações
+        </h3>
+
+        <div class="config-toggle-row">
+          <div class="config-toggle-info">
+            <h4>Novos Pedidos</h4>
+            <p>Receber notificação de novos pedidos</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" [(ngModel)]="notifNovosPedidos" />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="config-toggle-row">
+          <div class="config-toggle-info">
+            <h4>Pedidos Prontos</h4>
+            <p>Notificar quando pedidos estiverem prontos</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" [(ngModel)]="notifPedidosProntos" />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="config-toggle-row">
+          <div class="config-toggle-info">
+            <h4>Estoque Baixo</h4>
+            <p>Alertar quando especiais estiverem acabando</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" [(ngModel)]="notifEstoqueBaixo" />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- CONFIGURAÇÕES DE DELIVERY -->
+      <div class="config-card">
+        <h3 class="config-card-titulo">Configurações de Delivery</h3>
+
+        <div class="form-row form-row-2">
+          <div class="form-campo">
+            <label>Taxa de Entrega</label>
+            <div class="input-com-prefixo">
+              <span class="input-prefixo">R$</span>
+              <input type="number" step="0.01" min="0" [(ngModel)]="configTaxaEntrega" placeholder="0,00" />
+            </div>
+          </div>
+          <div class="form-campo">
+            <label>Pedido Mínimo</label>
+            <div class="input-com-prefixo">
+              <span class="input-prefixo">R$</span>
+              <input type="number" step="0.01" min="0" [(ngModel)]="configPedidoMinimo" placeholder="0,00" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row form-row-2">
+          <div class="form-campo">
+            <label>Tempo Estimado (min)</label>
+            <input type="number" min="0" [(ngModel)]="configTempoEstimado" placeholder="45" />
+          </div>
+          <div class="form-campo">
+            <label>Raio de Entrega (km)</label>
+            <input type="number" min="0" [(ngModel)]="configRaioEntrega" placeholder="5" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Botão Salvar -->
+      <div class="config-rodape">
+        <button class="btn-salvar-config" (click)="salvarConfiguracoes()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+            <polyline points="17 21 17 13 7 13 7 21"/>
+            <polyline points="7 3 7 8 15 8"/>
+          </svg>
+          Salvar Configurações
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ============================ -->
+    <!-- ABA: DELIVERY                -->
+    <!-- ============================ -->
+    <div *ngIf="abaSidebar === 'delivery'" class="conteudo-delivery">
+
+      <!-- Header da seção -->
+      <div class="conteudo-header">
+        <div>
+          <h1>Gestão de Delivery</h1>
+          <p>Gerencie motoboys e atribua pedidos para entrega</p>
+        </div>
+      </div>
+
+      <!-- KPIs -->
+      <div class="kpis-delivery">
+
+        <div class="kpi-delivery-card">
+          <div class="kpi-delivery-info">
+            <span class="kpi-delivery-titulo">Disponíveis</span>
+            <span class="kpi-delivery-num cor-verde">{{totalMotoboysDisponiveis}}</span>
+          </div>
+          <div class="kpi-delivery-icone bg-verde">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="kpi-delivery-card">
+          <div class="kpi-delivery-info">
+            <span class="kpi-delivery-titulo">Em Entrega</span>
+            <span class="kpi-delivery-num cor-laranja">{{totalMotoboysEmEntrega}}</span>
+          </div>
+          <div class="kpi-delivery-icone bg-laranja">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="5.5" cy="17.5" r="3.5"/>
+              <circle cx="18.5" cy="17.5" r="3.5"/>
+              <path d="M15 6h-3l-3 8h6l3-8h-3z"/>
+              <path d="M9 6L4 17"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="kpi-delivery-card">
+          <div class="kpi-delivery-info">
+            <span class="kpi-delivery-titulo">Aguardando</span>
+            <span class="kpi-delivery-num cor-azul">{{totalAguardandoEntrega}}</span>
+          </div>
+          <div class="kpi-delivery-icone bg-azul">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+              <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="kpi-delivery-card">
+          <div class="kpi-delivery-info">
+            <span class="kpi-delivery-titulo">Total Hoje</span>
+            <span class="kpi-delivery-num cor-cinza">{{totalEntregasHoje}}</span>
+          </div>
+          <div class="kpi-delivery-icone bg-cinza">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="#555" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Layout 2 colunas -->
+      <div class="delivery-layout">
+
+        <!-- COLUNA ESQUERDA: Motoboys -->
+        <div class="delivery-coluna">
+
+          <div class="delivery-coluna-header">
+            <h3>Motoboys</h3>
+            <div class="busca-motoboy-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input type="text" placeholder="Buscar..." [(ngModel)]="buscaMotoboy" />
+            </div>
+          </div>
+
+          <!-- Tabs de filtro -->
+          <div class="motoboy-tabs">
+            <button *ngFor="let s of statusMotoboyDisponiveis"
+                    class="motoboy-tab"
+                    [class.tab-ativa]="filtroStatusMotoboy === s"
+                    (click)="filtroStatusMotoboy = s">
+              {{s === 'Disponível' ? 'Disponíveis' : s}}
+            </button>
+          </div>
+
+          <!-- Lista de motoboys -->
+          <div class="motoboys-lista">
+
+            <div class="motoboy-card" *ngFor="let m of motoboysFiltrados">
+
+              <!-- Avatar -->
+              <div class="motoboy-avatar" [style.background]="m.corAvatar">
+                {{m.inicial}}
+              </div>
+
+              <!-- Conteúdo -->
+              <div class="motoboy-conteudo">
+                <div class="motoboy-topo">
+                  <div>
+                    <h4>{{m.nome}}</h4>
+                    <span class="motoboy-entregas">{{m.entregasHoje}} entregas hoje</span>
+                  </div>
+                  <span class="motoboy-badge" [ngClass]="'mb-' + m.status.toLowerCase().replace(' ', '-')">
+                    <span class="bolinha-status"></span>
+                    {{m.status}}
+                  </span>
+                </div>
+
+                <p class="motoboy-localizacao" *ngIf="m.localizacao">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
+                       fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                  {{m.localizacao}}
+                </p>
+
+                <p class="motoboy-tempo" *ngIf="m.tempoFora !== null"
+                   [class.tempo-atrasado]="m.tempoFora >= 20">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
+                       fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  Fora há {{m.tempoFora}} min
+                </p>
+
+                <span class="motoboy-pronto-badge" *ngIf="m.prontoParaAceitar">
+                  Pronto para aceitar pedidos
+                </span>
+
+                <!-- Botão "Marcar como Entregue" (só pra motoboys em entrega) -->
+                
+                  
+              </div>
+
+            </div>
+
+            <!-- Estado vazio -->
+            <div *ngIf="motoboysFiltrados.length === 0" class="grid-vazio">
+              <h3>Nenhum motoboy encontrado</h3>
+              <p>Tente outro filtro.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- COLUNA DIREITA: Pedidos Prontos -->
+        <div class="delivery-coluna">
+
+          <div class="delivery-coluna-header">
+            <h3>Pedidos Prontos</h3>
+            <span class="badge-aguardando" *ngIf="pedidosProntos.length > 0">
+              {{pedidosProntos.length}} aguardando
+            </span>
+          </div>
+
+          <div class="pedidos-prontos-lista">
+
+            <div class="pedido-pronto-card" *ngFor="let p of pedidosProntos"
+                 [class.atrasado]="p.atrasado">
+
+              <!-- Topo -->
+              <div class="pedido-pronto-topo">
+                <div>
+                  <div class="pedido-pronto-titulo">
+                    <h4>#{{p.numero || p.id}}</h4>
+                    <span class="badge-atrasado" *ngIf="p.atrasado">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24"
+                           fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="8" x2="12" y2="12"/>
+                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                      </svg>
+                      Atrasado
+                    </span>
+                  </div>
+                  <p class="pedido-pronto-cliente">{{p.cliente}}</p>
+                </div>
+                <div class="pedido-pronto-valor">
+                  <span class="valor-grande">R$ {{p.valor.toFixed(2).replace('.', ',')}}</span>
+                  <span class="valor-itens">{{p.itens.length}} itens</span>
+                </div>
+              </div>
+
+              <!-- Endereço -->
+              <p class="pedido-pronto-endereco">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                {{p.endereco}}
+              </p>
+
+              <!-- Mini-KPIs -->
+              <div class="pedido-mini-kpis">
+                <div class="mini-kpi">
+                  <span class="mini-kpi-label">Distância</span>
+                  <span class="mini-kpi-valor">{{p.distancia}} km</span>
+                </div>
+                <div class="mini-kpi">
+                  <span class="mini-kpi-label">Tempo</span>
+                  <span class="mini-kpi-valor">{{p.tempoEstimado}} min</span>
+                </div>
+                <div class="mini-kpi" [class.kpi-atrasado]="p.atrasado">
+                  <span class="mini-kpi-label">Esperando</span>
+                  <span class="mini-kpi-valor">{{p.esperandoMin}} min</span>
+                </div>
+              </div>
+
+              <!-- Botão Atribuir -->
+              <button class="btn-atribuir" (click)="atribuirPedidoMotoboy(p)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="5.5" cy="17.5" r="3.5"/>
+                  <circle cx="18.5" cy="17.5" r="3.5"/>
+                  <path d="M15 6h-3l-3 8h6l3-8h-3z"/>
+                  <path d="M9 6L4 17"/>
+                </svg>
+                Atribuir Pedido
+              </button>
+
+            </div>
+
+            <!-- Estado vazio -->
+            <div *ngIf="pedidosProntos.length === 0" class="grid-vazio">
+              <h3>Nenhum pedido aguardando</h3>
+              <p>Quando houver pedidos prontos, eles aparecerão aqui.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ============================ -->
+    <!-- OUTRAS ABAS — Em construção  -->
+    <!-- ============================ -->
+    <div *ngIf="abaSidebar !== 'cardapio' && abaSidebar !== 'dashboard' && abaSidebar !== 'categorias' && abaSidebar !== 'pedidos' && abaSidebar !== 'banners' && abaSidebar !== 'configuracoes' && abaSidebar !== 'delivery'" class="aba-em-construcao">
+      <div class="construcao-icone">🚧</div>
+      <h2>Em construção</h2>
+      <p>A aba <b>{{abaSidebar}}</b> será implementada em breve.</p>
+    </div>
+
+  </main>
+
+  <!-- ============================================ -->
+  <!-- MODAL EDITAR / ADICIONAR ITEM (PRODUTO)       -->
+  <!-- ============================================ -->
+  <div class="modal-overlay" *ngIf="modalAberto" (click)="fecharModal()">
+    <div class="modal-produto" (click)="$event.stopPropagation()">
+
+      <div class="modal-header">
+        <h3>{{ modoEdicao ? 'Editar Item' : 'Adicionar Item' }}</h3>
+        <button class="modal-fechar" (click)="fecharModal()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="form-row">
+          <div class="form-campo">
+            <label>Nome do Produto *</label>
+            <input type="text" [(ngModel)]="formNome" placeholder="Ex: Villa Clássico" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-campo">
+            <label>Categoria *</label>
+            <select [(ngModel)]="formCategoria">
+              <option *ngFor="let cat of categorias" [value]="cat" [hidden]="cat === 'Todas'">{{cat}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-campo">
+            <label>Descrição do Produto *</label>
+            <textarea [(ngModel)]="formDescricao" rows="2" placeholder="Descrição do prato"></textarea>
+          </div>
+        </div>
+
+        <div class="form-row form-row-2">
+          <div class="form-campo">
+            <label>Preço (R$) *</label>
+            <div class="input-com-prefixo">
+              <span class="input-prefixo">R$</span>
+              <input type="number" step="0.01" min="0" [(ngModel)]="formPreco" placeholder="0,00" />
+            </div>
+          </div>
+          <div class="form-campo">
+            <label>Quantidade em Estoque</label>
+            <input type="number" min="0" [(ngModel)]="formEstoque" placeholder="Ex: 25" />
+            <span class="form-help">Deixe vazio para ilimitado</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-campo">
+            <label>Upload de Imagem do Produto *</label>
+            <input type="text" [(ngModel)]="formImagem" placeholder="https://..." />
+          </div>
+        </div>
+
+        <div class="form-row" *ngIf="formImagem">
+          <div class="preview-imagem">
+            <span class="preview-label">PREVIEW DA IMAGEM</span>
+            <div class="preview-wrapper">
+              <img [src]="formImagem" alt="Preview" onerror="this.style.display='none'" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-campo">
+            <label>Status do Produto *</label>
+            <select [(ngModel)]="formStatus">
+              <option value="Disponível">Disponível</option>
+              <option value="Indisponível">Indisponível</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-cancelar-modal" (click)="fecharModal()">Cancelar</button>
+        <button class="btn-salvar-modal" (click)="salvarProduto()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+            <polyline points="17 21 17 13 7 13 7 21"/>
+            <polyline points="7 3 7 8 15 8"/>
+          </svg>
+          {{ modoEdicao ? 'Salvar Alterações' : 'Adicionar Item' }}
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- MODAL EDITAR ITEM (status + dias da semana)   -->
+  <!-- ============================================ -->
+  <div class="modal-overlay" *ngIf="modalDiasAberto" (click)="fecharModalDias()">
+    <div class="modal-dias" (click)="$event.stopPropagation()">
+
+      <div class="modal-header">
+        <h3>Editar Item: {{produtoEditandoDias?.nome}}</h3>
+        <button class="modal-fechar" (click)="fecharModalDias()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="status-bloco">
+          <div class="status-info">
+            <h4>Status do Item</h4>
+            <p>Ativar ou desativar este item do cardápio</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" [(ngModel)]="disponivelFormulario" />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="dias-bloco">
+          <h4 class="dias-bloco-titulo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            Dias da Semana Disponíveis
+          </h4>
+          <p class="dias-bloco-sub">Selecione os dias em que este item estará disponível no cardápio</p>
+
+          <div class="dias-pilulas">
+            <button *ngFor="let dia of todosOsDias"
+                    class="dia-pilula"
+                    [class.selecionada]="diasFormulario.includes(dia)"
+                    (click)="toggleDiaFormulario(dia)">
+              {{dia}}
+              <svg *ngIf="diasFormulario.includes(dia)" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                   stroke-linecap="round" stroke-linejoin="round" class="dia-check">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="nota-info">
+          <b>Nota:</b> Estas configurações afetam apenas o item "{{produtoEditandoDias?.nome}}".
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-cancelar-modal" (click)="fecharModalDias()">Cancelar</button>
+        <button class="btn-salvar-modal" (click)="salvarDias()">
+          Salvar Alterações
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- MODAL ADICIONAR / EDITAR BANNER               -->
+  <!-- ============================================ -->
+  <div class="modal-overlay" *ngIf="modalBannerAberto" (click)="fecharModalBanner()">
+    <div class="modal-banner" (click)="$event.stopPropagation()">
+
+      <div class="modal-header">
+        <h3>{{ modoEdicaoBanner ? 'Editar Banner' : 'Novo Banner' }}</h3>
+        <button class="modal-fechar" (click)="fecharModalBanner()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="form-row">
+          <div class="form-campo">
+            <label>Título *</label>
+            <input type="text" [(ngModel)]="formBannerTitulo" placeholder="Ex: Bem-vindo ao Villa Brasa" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-campo">
+            <label>Subtítulo *</label>
+            <input type="text" [(ngModel)]="formBannerSubtitulo" placeholder="Ex: Os melhores pratos da casa" />
+          </div>
+        </div>
+
+        <div class="form-row form-row-2">
+          <div class="form-campo">
+            <label>Texto do Botão *</label>
+            <input type="text" [(ngModel)]="formBannerTextoBotao" placeholder="Ex: Ver Cardápio" />
+          </div>
+          <div class="form-campo">
+            <label>Link do Botão *</label>
+            <input type="text" [(ngModel)]="formBannerCta" placeholder="#menu" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-campo">
+            <label>URL da Imagem *</label>
+            <input type="text" [(ngModel)]="formBannerImagem" placeholder="https://..." />
+          </div>
+        </div>
+
+        <div class="form-row" *ngIf="formBannerImagem">
+          <div class="banner-preview-modal">
+            <span class="preview-label-modal">Preview:</span>
+            <div class="banner-preview-img-wrapper">
+              <img [src]="formBannerImagem" alt="Preview" onerror="this.style.display='none'" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row banner-bottom-row">
+          <div class="form-campo banner-ordem-campo">
+            <label>Ordem de Exibição</label>
+            <input type="number" min="1" [(ngModel)]="formBannerOrdem" placeholder="1" />
+          </div>
+          <div class="banner-toggle-wrapper">
+            <label class="toggle-switch">
+              <input type="checkbox" [(ngModel)]="formBannerAtivo" />
+              <span class="toggle-slider"></span>
+            </label>
+            <span class="banner-toggle-label">Banner Ativo</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-cancelar-modal" (click)="fecharModalBanner()">Cancelar</button>
+        <button class="btn-salvar-modal" (click)="salvarBanner()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+            <polyline points="17 21 17 13 7 13 7 21"/>
+            <polyline points="7 3 7 8 15 8"/>
+          </svg>
+          Salvar
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <!-- MODAL ATRIBUIR PEDIDO -->
+<div class="modal-overlay" *ngIf="modalAtribuirAberto" (click)="fecharModalAtribuir()">
+  <div class="modal-atribuir" (click)="$event.stopPropagation()">
+
+    <div class="modal-header">
+      <div>
+        <h3>Atribuir Pedido</h3>
+        <p class="modal-subtitulo">Selecione um motoboy disponível</p>
+      </div>
+      <button class="modal-fechar" (click)="fecharModalAtribuir()">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <button class="atribuir-motoboy-card"
+              *ngFor="let m of motoboysDisponiveisParaAtribuir"
+              (click)="confirmarAtribuicao(m)">
+        <div class="atribuir-avatar">{{m.inicial}}</div>
+        <div class="atribuir-info">
+          <h4>{{m.nome}}</h4>
+          <span>{{m.entregasHoje}} entregas hoje</span>
+        </div>
+        <span class="atribuir-badge-disponivel">● Disponível</span>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+</div>

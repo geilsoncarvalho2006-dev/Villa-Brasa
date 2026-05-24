@@ -1,0 +1,155 @@
+<div class="login-container">
+  <div class="login-box">
+
+    <!-- TELA LOGIN SIMPLES -->
+    <ng-container *ngIf="tela === 'login'">
+      <div class="logo">🔥</div>
+      <h1>Villa Brasa</h1>
+      <p class="subtitle">Hamburgueria Artesanal Premium</p>
+      <h2>Bem-vindo</h2>
+
+      <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" placeholder="seu@email.com" [(ngModel)]="email" />
+      </div>
+
+      <div class="form-group">
+        <label>Senha</label>
+        <input type="password" placeholder="••••••••" [(ngModel)]="senha" />
+        <a class="forgot" (click)="tela = 'recuperar'" style="cursor:pointer">Esqueceu a senha?</a>
+      </div>
+
+      <div class="erro" *ngIf="erro">{{erro}}</div>
+
+      <button class="btn-primary" (click)="entrarComoCliente()" [disabled]="carregando">
+        {{carregando ? 'Entrando...' : 'Entrar como Cliente'}}
+      </button>
+
+      <button class="btn-secondary" (click)="tela = 'cadastro'">Criar nova conta</button>
+      <a class="admin-link" (click)="tela = 'loginAdmin'" style="cursor:pointer">Acesso administrativo</a>
+      <p class="footer">Villa Brasa © 2026 - Todos os direitos reservados</p>
+    </ng-container>
+
+    <!-- TELA LOGIN ADMIN (com perfis) -->
+    <ng-container *ngIf="tela === 'loginAdmin'">
+      <div class="logo">🔥</div>
+      <h1>Villa Brasa</h1>
+      <p class="subtitle">Hamburgueria Artesanal Premium</p>
+      <h2>Bem-vindo</h2>
+
+      <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" placeholder="seu@email.com" [(ngModel)]="email" />
+      </div>
+
+      <div class="form-group">
+        <label>Senha</label>
+        <input type="password" placeholder="••••••••" [(ngModel)]="senha" />
+        <a class="forgot" (click)="tela = 'recuperar'" style="cursor:pointer">Esqueceu a senha?</a>
+      </div>
+
+      <div class="perfil-grid">
+        <button [class.selected]="perfil === 'customer'" (click)="perfil = 'customer'">Cliente</button>
+        <button [class.selected]="perfil === 'admin'" (click)="perfil = 'admin'">Admin</button>
+        <button [class.selected]="perfil === 'kitchen'" (click)="perfil = 'kitchen'">Cozinha</button>
+        <button [class.selected]="perfil === 'delivery'" (click)="perfil = 'delivery'">Entregador</button>
+      </div>
+
+      <div class="erro" *ngIf="erro">{{erro}}</div>
+
+      <button class="btn-primary" (click)="entrar()" [disabled]="carregando">
+        {{carregando ? 'Entrando...' : 'Entrar'}}
+      </button>
+
+      <button class="btn-secondary" (click)="tela = 'login'">Voltar para modo cliente</button>
+      <p class="footer">Villa Brasa © 2026 - Todos os direitos reservados</p>
+    </ng-container>
+
+    <!-- TELA RECUPERAR SENHA -->
+    <ng-container *ngIf="tela === 'recuperar'">
+      <div class="lock-icon">🔒</div>
+      <h1>Recuperar Senha</h1>
+      <p class="subtitle">Insira seu e-mail para receber o código de recuperação</p>
+
+      <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" placeholder="seu@email.com" [(ngModel)]="emailRecuperar" />
+      </div>
+
+      <div class="erro" *ngIf="erro">{{erro}}</div>
+
+      <button class="btn-primary" (click)="enviarCodigo()">Enviar Código</button>
+      <button class="btn-voltar" (click)="voltarLogin()">← Voltar para Login</button>
+      <p class="footer">Villa Brasa © 2024</p>
+    </ng-container>
+
+    <!-- TELA VERIFICAR CÓDIGO -->
+    <ng-container *ngIf="tela === 'verificar'">
+      <div class="lock-icon">🔒</div>
+      <h1>Verificar Código</h1>
+      <p class="subtitle">Digite o código de 6 dígitos enviado para seu e-mail</p>
+
+      <div class="form-group">
+        <label>Código de Verificação</label>
+        <input type="text" placeholder="000000" maxlength="6" [(ngModel)]="codigo" class="codigo-input" />
+        <p class="codigo-info">Código enviado para {{emailRecuperar}}</p>
+      </div>
+
+      <button class="btn-primary" (click)="verificarCodigo()">Verificar Código</button>
+      <button class="btn-link" (click)="enviarCodigo()">Não recebeu o código? Reenviar</button>
+      <button class="btn-voltar" (click)="voltarLogin()">← Voltar para Login</button>
+    </ng-container>
+
+    <!-- TELA NOVA SENHA -->
+    <ng-container *ngIf="tela === 'novaSenha'">
+      <div class="lock-icon">🔒</div>
+      <h1>Nova Senha</h1>
+      <p class="subtitle">Escolha uma nova senha para sua conta</p>
+
+      <div class="form-group">
+        <label>Nova Senha</label>
+        <input type="password" placeholder="••••••••" [(ngModel)]="novaSenha" />
+      </div>
+
+      <div class="form-group">
+        <label>Confirmar Nova Senha</label>
+        <input type="password" placeholder="••••••••" [(ngModel)]="confirmarSenha" />
+      </div>
+
+      <div class="erro" *ngIf="erro">{{erro}}</div>
+
+      <button class="btn-primary" (click)="redefinirSenha()">Redefinir Senha</button>
+      <button class="btn-voltar" (click)="voltarLogin()">← Voltar para Login</button>
+    </ng-container>
+
+    <!-- TELA CADASTRO -->
+    <ng-container *ngIf="tela === 'cadastro'">
+      <div class="logo">🔥</div>
+      <h1>Criar Conta</h1>
+      <p class="subtitle">Faça parte do Villa Brasa</p>
+
+      <div class="form-group">
+        <label>Nome</label>
+        <input type="text" placeholder="Seu nome" [(ngModel)]="nomeNovo" />
+      </div>
+
+      <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" placeholder="seu@email.com" [(ngModel)]="emailNovo" />
+      </div>
+
+      <div class="form-group">
+        <label>Senha</label>
+        <input type="password" placeholder="••••••••" [(ngModel)]="senhaNova" />
+      </div>
+
+      <div class="erro" *ngIf="erro">{{erro}}</div>
+
+      <button class="btn-primary" (click)="cadastrar()" [disabled]="carregando">
+        {{carregando ? 'Criando...' : 'Criar Conta'}}
+      </button>
+      <button class="btn-voltar" (click)="voltarLogin()">← Voltar para Login</button>
+    </ng-container>
+
+  </div>
+</div>

@@ -1,0 +1,1413 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.delivery-container {
+  min-height: 100vh;
+  background: #fafaf7;
+  font-family: 'Inter', sans-serif;
+  padding: 24px 16px 40px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ===== HEADER ===== */
+.delivery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 24px;
+}
+
+.delivery-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icone {
+  width: 40px;
+  height: 40px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delivery-logo h1 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.delivery-logo p {
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+}
+
+.btn-sair-delivery {
+  background: transparent;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.btn-sair-delivery:hover {
+  background: #f5f5f5;
+  color: #1a1a1a;
+}
+
+/* ===== KPIs ===== */
+.delivery-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.kpi-card {
+  background: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.kpi-icone {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bg-azul    { background: #dbeafe; }
+.bg-laranja { background: #ffedd5; }
+.bg-verde   { background: #dcfce7; }
+
+.kpi-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.kpi-label {
+  font-size: 11px;
+  color: #888;
+}
+
+.kpi-valor {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1;
+}
+
+/* ===== TABS ===== */
+.delivery-tabs {
+  display: flex;
+  background: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.delivery-tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.delivery-tab:hover {
+  background: #f5f5f5;
+  color: #1a1a1a;
+}
+
+.delivery-tab.tab-ativa {
+  background: #1a1a1a;
+  color: white;
+}
+
+/* ===== CARDS DE PEDIDO ===== */
+.delivery-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pedido-delivery-card {
+  background: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pedido-delivery-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.pedido-titulo-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.pedido-titulo-row h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.badge-id {
+  background: #1a1a1a;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+
+.pedido-itens {
+  font-size: 12px;
+  color: #888;
+}
+
+.badge-pago {
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* ===== Endereços ===== */
+.pedido-enderecos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.endereco-linha {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.endereco-icone {
+  width: 28px;
+  height: 28px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.endereco-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.endereco-label {
+  font-size: 10px;
+  color: #999;
+  text-transform: lowercase;
+}
+
+.endereco-valor {
+  font-size: 13px;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+/* ===== Mini-KPIs ===== */
+.pedido-mini-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.mini-kpi-card {
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.mini-kpi-card svg {
+  margin-bottom: 2px;
+}
+
+.mini-kpi-label {
+  font-size: 10px;
+  color: #888;
+}
+
+.mini-kpi-valor {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.mini-kpi-valor.verde {
+  color: #16a34a;
+}
+
+/* ===== Botão Aceitar ===== */
+.btn-aceitar {
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.btn-aceitar:hover {
+  background: #333;
+}
+
+.badge-concluido {
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* ===== Estado vazio ===== */
+.lista-vazia {
+  background: white;
+  border: 1px dashed #d4d4d4;
+  border-radius: 16px;
+  padding: 50px 24px;
+  text-align: center;
+}
+
+.lista-vazia-icone {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.lista-vazia h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.lista-vazia p {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+}
+
+/* Linha de horários */
+.pedido-horario {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #888;
+  flex-wrap: wrap;
+}
+
+.pedido-horario b {
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+/* ============================================ */
+/* TELA DE DETALHE DA ENTREGA                   */
+/* ============================================ */
+.detalhe-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 18px;
+}
+
+.btn-voltar-detalhe {
+  background: white;
+  border: 1px solid #e5e5e5;
+  color: #1a1a1a;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.btn-voltar-detalhe:hover {
+  background: #f5f5f5;
+}
+
+.detalhe-titulo {
+  flex: 1;
+}
+
+.detalhe-titulo h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+}
+
+.detalhe-titulo span {
+  font-size: 12px;
+  color: #888;
+}
+
+.badge-status-entrega {
+  background: #ffedd5;
+  color: #c2410c;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badge-status-entrega .bolinha-status {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* ===== Cards do detalhe ===== */
+.detalhe-card {
+  background: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.detalhe-card-titulo {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.detalhe-linha {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.detalhe-icone-circ {
+  width: 32px;
+  height: 32px;
+  background: #f5f5f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.detalhe-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.detalhe-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #999;
+  letter-spacing: 0.5px;
+}
+
+.detalhe-valor {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.detalhe-valor-secundario {
+  font-size: 13px;
+  color: #555;
+}
+
+/* Mini-KPIs do detalhe */
+.detalhe-mini-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* ===== Mapa mockup ===== */
+.mapa-container {
+  background: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.mapa-legenda {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #555;
+  font-weight: 500;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-preto    { background: #1a1a1a; }
+.dot-azul     { background: #2563eb; }
+.dot-vermelho { background: #dc2626; }
+
+.mapa-mockup {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background: #f0fdf4;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mapa-conteudo {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.3s ease-out;
+  transform-origin: center center;
+}
+
+.mapa-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#fbbf24 1.5px, transparent 1.5px),
+    linear-gradient(90deg, #fbbf24 1.5px, transparent 1.5px);
+  background-size: 60px 60px;
+  opacity: 0.6;
+}
+
+.mapa-pin {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.pin-restaurante { top: 30%; left: 30%; }
+.pin-voce        { top: 50%; left: 50%; }
+.pin-destino     { top: 70%; left: 65%; }
+
+.pin-icone-preto,
+.pin-icone-azul,
+.pin-icone-vermelho {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.pin-icone-preto    { background: #1a1a1a; }
+.pin-icone-azul     { background: #2563eb; }
+.pin-icone-vermelho { background: #dc2626; }
+
+.pin-label {
+  background: white;
+  font-size: 10px;
+  font-weight: 700;
+  color: #1a1a1a;
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.pin-label-azul {
+  background: #2563eb;
+  color: white;
+}
+
+.mapa-zoom {
+  position: absolute;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  color: #555;
+}
+
+.mapa-zoom-mais  { bottom: 50px; }
+.mapa-zoom-menos { bottom: 12px; }
+
+/* ===== Itens do pedido ===== */
+.lista-itens-detalhe {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-detalhe-linha {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 13px;
+  color: #333;
+}
+
+.item-detalhe-linha:last-child { border-bottom: none; }
+
+.qtd-item {
+  font-weight: 700;
+  color: #888;
+}
+
+/* ===== Pagamento ===== */
+.pagamento-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagamento-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pagamento-info > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Observações ===== */
+.observacoes-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.obs-linha {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.obs-linha > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Botões secundários (Ligar/Chat) ===== */
+.acoes-secundarias {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.btn-acao-sec {
+  background: white;
+  border: 1px solid #e5e5e5;
+  color: #1a1a1a;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.btn-acao-sec:hover {
+  background: #f5f5f5;
+  border-color: #1a1a1a;
+}
+
+/* ===== Botão principal preto ===== */
+.btn-acao-principal {
+  width: 100%;
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.btn-acao-principal:hover {
+  background: #333;
+}
+
+/* ============================================ */
+/* TELA DE CHAT                                  */
+/* ============================================ */
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 0;
+}
+
+.chat-cliente-avatar {
+  width: 42px;
+  height: 42px;
+  background: #888;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.chat-cliente-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-cliente-info h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.chat-cliente-info span {
+  font-size: 12px;
+  color: #888;
+}
+
+.btn-chat-ligar {
+  background: white;
+  border: 1px solid #e5e5e5;
+  color: #1a1a1a;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.btn-chat-ligar:hover {
+  background: #f5f5f5;
+}
+
+/* ===== Mensagens ===== */
+.chat-mensagens {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 4px;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.chat-data-separador {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0 16px;
+}
+
+.chat-data-separador span {
+  background: #e5e5e5;
+  color: #666;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.chat-mensagem {
+  display: flex;
+  width: 100%;
+}
+
+.msg-cliente { justify-content: flex-start; }
+.msg-motoboy { justify-content: flex-end; }
+
+.bolha-mensagem {
+  max-width: 70%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.msg-cliente .bolha-mensagem {
+  background: white;
+  border: 1px solid #e5e5e5;
+  color: #1a1a1a;
+  border-bottom-left-radius: 4px;
+}
+
+.msg-motoboy .bolha-mensagem {
+  background: #1a1a1a;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.bolha-mensagem p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.bolha-hora {
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+.msg-motoboy .bolha-hora { color: #ccc; }
+.msg-cliente .bolha-hora { color: #999; }
+
+/* ===== Respostas rápidas ===== */
+.chat-respostas-rapidas {
+  border-top: 1px solid #eee;
+  padding: 12px 0;
+}
+
+.respostas-label {
+  font-size: 11px;
+  color: #888;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.respostas-grid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.resposta-rapida-btn {
+  background: white;
+  border: 1px solid #e5e5e5;
+  color: #1a1a1a;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.resposta-rapida-btn:hover {
+  background: #1a1a1a;
+  color: white;
+  border-color: #1a1a1a;
+}
+
+/* ===== Input de mensagem ===== */
+.chat-input-container {
+  display: flex;
+  gap: 10px;
+  padding: 12px 0;
+  border-top: 1px solid #eee;
+  align-items: center;
+}
+
+.chat-input {
+  flex: 1;
+  border: 1px solid #e5e5e5;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-family: inherit;
+  background: #f5f5f5;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.chat-input:focus {
+  border-color: #1a1a1a;
+  background: white;
+}
+
+.btn-enviar-msg {
+  background: #1a1a1a;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.btn-enviar-msg:hover {
+  background: #333;
+  transform: scale(1.05);
+}
+
+/* ============================================ */
+/* BOTÕES COM ÍCONES — Estados da entrega       */
+/* ============================================ */
+
+/* Botão principal com ícone */
+.btn-acao-principal {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Botão principal vira VERDE quando é "Finalizar Entrega" */
+.btn-acao-principal.btn-finalizar-verde {
+  background: #16a34a;
+}
+
+.btn-acao-principal.btn-finalizar-verde:hover {
+  background: #15803d;
+}
+
+/* Botão "Cliente Não Encontrado" (vermelho/branco) */
+.btn-cliente-nao-encontrado {
+  width: 100%;
+  background: white;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  margin-bottom: 10px;
+  transition: all 0.2s;
+}
+
+.btn-cliente-nao-encontrado:hover {
+  background: #fef2f2;
+  border-color: #dc2626;
+}/* ============================================ */
+/* TELA CANCELAR ENTREGA                         */
+/* ============================================ */
+.cancelamento-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 18px;
+  background: white;
+  margin: -24px -16px 18px;
+  padding: 16px 24px;
+}
+
+.cancelamento-titulo h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+}
+
+.cancelamento-titulo span {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Alerta vermelho topo */
+.alerta-cancelamento {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.alerta-cancelamento svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.alerta-cancelamento h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #dc2626;
+  margin-bottom: 4px;
+}
+
+.alerta-cancelamento p {
+  font-size: 12px;
+  color: #991b1b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Info do pedido */
+.info-pedido-linha {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 13px;
+}
+
+.info-label {
+  color: #888;
+}
+
+.info-valor {
+  color: #1a1a1a;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Título "Motivo do Cancelamento" */
+.motivo-titulo {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 18px 0 10px;
+}
+
+/* Cards de motivo */
+.lista-motivos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.motivo-card {
+  background: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  width: 100%;
+  transition: all 0.2s;
+}
+
+.motivo-card:hover {
+  border-color: #888;
+  background: #fafafa;
+}
+
+.motivo-card.motivo-selecionado {
+  border-color: #1a1a1a;
+  background: #fafafa;
+}
+
+.motivo-icone {
+  width: 36px;
+  height: 36px;
+  background: #f5f5f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #555;
+}
+
+.motivo-info {
+  flex: 1;
+}
+
+.motivo-info h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 3px;
+}
+
+.motivo-info p {
+  font-size: 11px;
+  color: #888;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.motivo-radio {
+  flex-shrink: 0;
+}
+
+.radio-circulo {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #d4d4d4;
+  border-radius: 50%;
+  background: white;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.radio-circulo.radio-marcado {
+  border-color: #1a1a1a;
+}
+
+.radio-circulo.radio-marcado::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: #1a1a1a;
+  border-radius: 50%;
+}
+
+/* Textarea */
+.textarea-card {
+  background: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 18px;
+}
+
+.textarea-info {
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  min-height: 80px;
+  font-family: inherit;
+  font-size: 13px;
+  color: #1a1a1a;
+  background: transparent;
+}
+
+.textarea-info::placeholder {
+  color: #999;
+}
+
+.textarea-rodape {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #f5f5f5;
+}
+
+.textarea-info-min {
+  font-size: 11px;
+  color: #888;
+}
+
+.textarea-contador {
+  font-size: 11px;
+  color: #888;
+  font-weight: 600;
+}
+
+/* Botões finais */
+.btn-confirmar-cancelamento {
+  width: 100%;
+  background: #f87171;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  margin-bottom: 10px;
+  transition: all 0.2s;
+}
+
+.btn-confirmar-cancelamento:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+.btn-confirmar-cancelamento:disabled {
+  background: #fca5a5;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn-voltar-entrega {
+  width: 100%;
+  background: white;
+  color: #1a1a1a;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.btn-voltar-entrega:hover {
+  background: #f5f5f5;
+}
+/* ============================================ */
+/* CARD DE DICA — Cancelamento                  */
+/* ============================================ */
+.card-dica-cancelamento {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.dica-emoji {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.card-dica-cancelamento p {
+  font-size: 12px;
+  color: #1e40af;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.card-dica-cancelamento p b {
+  font-weight: 700;
+}
+.card-dica-cancelamento {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.dica-emoji {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.card-dica-cancelamento p {
+  font-size: 12px;
+  color: #1e40af;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.card-dica-cancelamento p b {
+  font-weight: 700;
+}
+/* ============================================ */
+/* CHAT — ocupa a altura toda da tela           */
+/* (mantém max-width 720px do container)        */
+/* ============================================ */
+.delivery-container:has(.chat-header) {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100vh;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.delivery-container:has(.chat-header) .chat-header {
+  flex-shrink: 0;
+  padding-top: 16px;
+}
+
+.delivery-container:has(.chat-header) .chat-mensagens {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.delivery-container:has(.chat-header) .chat-respostas-rapidas {
+  flex-shrink: 0;
+}
+
+.delivery-container:has(.chat-header) .chat-input-container {
+  flex-shrink: 0;
+  padding-bottom: 16px;
+}
+/* ============================================ */
+/* BADGE CANCELADO — Card de pedido cancelado   */
+/* ============================================ */
+.badge-cancelado {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cancelado-titulo {
+  font-size: 14px;
+  font-weight: 700;
+  color: #dc2626;
+}
+
+.cancelado-motivo {
+  font-size: 12px;
+  color: #991b1b;
+}
+
+.cancelado-motivo b {
+  font-weight: 700;
+}
+
+.cancelado-obs {
+  font-size: 11px;
+  color: #b91c1c;
+  font-style: italic;
+  padding-top: 6px;
+  border-top: 1px solid #fecaca;
+}
+/* ============================================ */
+/* TELA DE SUCESSO — Entrega Concluída          */
+/* ============================================ */
+.card-sucesso-entrega {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 14px;
+  padding: 32px 20px;
+  margin-top: 14px;
+  text-align: center;
+}
+
+.sucesso-icone-circulo {
+  width: 72px;
+  height: 72px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  border: 2px solid #bbf7d0;
+}
+
+.card-sucesso-entrega h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.card-sucesso-entrega p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}

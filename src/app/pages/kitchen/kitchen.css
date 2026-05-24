@@ -1,0 +1,539 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.kitchen-container {
+  min-height: 100vh;
+  background: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  padding-bottom: 40px;
+}
+
+/* ============================================ */
+/* HEADER preto                                 */
+/* ============================================ */
+.kitchen-header {
+  background: #0a0a0a;
+  padding: 16px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar-kitchen {
+  width: 44px;
+  height: 44px;
+  background: white;
+  color: #ff6b00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.header-left h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+
+.header-left span {
+  font-size: 13px;
+  color: #888;
+}
+
+.header-right {
+  background: white;
+  color: #1a1a1a;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+}
+
+.header-right:hover {
+  background: #f5f5f5;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================ */
+/* CONTEÚDO + TÍTULO                            */
+/* ============================================ */
+.kitchen-content {
+  padding: 28px 28px 40px;
+}
+
+.kitchen-titulo {
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 24px;
+}
+
+/* ============================================ */
+/* KPIs                                         */
+/* ============================================ */
+.kpis-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.kpi {
+  border-radius: 14px;
+  padding: 22px 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kpi-num {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.kpi-label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.kpi-todos        { background: white;   color: #1a1a1a; }
+.kpi-pendentes    { background: #4a4a4a; color: white; }
+.kpi-preparando   { background: #f59e0b; color: white; }
+.kpi-prontos      { background: #22c55e; color: white; }
+.kpi-entrega      { background: #3b82f6; color: white; }
+.kpi-cancelados   { background: #ef4444; color: white; }
+
+/* ============================================ */
+/* KANBAN                                       */
+/* ============================================ */
+.kanban {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.coluna {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.coluna-header {
+  border-radius: 12px 12px 0 0;
+  padding: 16px;
+  text-align: center;
+  color: white;
+}
+
+.coluna-header h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.coluna-count {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.coluna-pendente   { background: #4a4a4a; }
+.coluna-preparando { background: #f59e0b; }
+.coluna-pronto     { background: #22c55e; }
+.coluna-entrega    { background: #3b82f6; }
+
+.coluna-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 200px;
+}
+
+/* ============================================ */
+/* CARD DE PEDIDO                               */
+/* ============================================ */
+.card-pedido {
+  background: white;
+  color: #1a1a1a;
+  border-radius: 12px;
+  padding: 18px;
+  border-left: 5px solid #ef4444; /* borda vermelha igual ao print */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.card-cancelado {
+  border-left-color: #ef4444;
+  opacity: 0.95;
+}
+
+/* Topo */
+.card-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.card-topo h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.card-tempo {
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-cliente {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+
+/* Tags */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tag-prioridade { background: #ef4444; color: white; }
+.tag-origem     { background: #f0f0f0; color: #555; }
+.tag-status.status-pendente   { background: #e5e5e5; color: #555; }
+.tag-status.status-preparando { background: #fef9c3; color: #a16207; }
+.tag-status.status-pronto     { background: #dcfce7; color: #15803d; }
+.tag-status.status-entrega    { background: #dbeafe; color: #1d4ed8; }
+.tag-status.status-cancelado  { background: #fee2e2; color: #b91c1c; }
+
+/* Itens */
+.card-itens {
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.card-itens h4 {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.card-item-linha {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+}
+
+.qtd-bolinha {
+  background: #1a1a1a;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-nome {
+  font-size: 13px;
+  color: #1a1a1a;
+}
+
+/* Chef */
+.card-chef {
+  background: #f3e8ff;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chef-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #1a1a1a;
+}
+
+.chef-info b { color: #6b21a8; }
+
+.chef-nome {
+  color: #999;
+  font-size: 13px;
+}
+
+.btn-chef {
+  background: #8b5cf6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-chef:hover {
+  background: #7c3aed;
+}
+
+/* Observação */
+.card-obs {
+  background: #fef9c3;
+  border-left: 3px solid #f59e0b;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #92400e;
+  line-height: 1.4;
+}
+
+.card-obs b { color: #a16207; }
+
+/* Ações */
+.card-acoes {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.btn-avancar {
+  flex: 1;
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-avancar:hover {
+  background: #333;
+}
+
+.btn-cancelar-pedido {
+  background: white;
+  color: #ef4444;
+  border: 1.5px solid #ef4444;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-cancelar-pedido:hover {
+  background: #ef4444;
+  color: white;
+}
+
+/* ============================================ */
+/* BANNER CANCELADOS                            */
+/* ============================================ */
+.banner-cancelados {
+  background: #ef4444;
+  border-radius: 12px;
+  padding: 18px 24px;
+  text-align: center;
+  color: white;
+  margin-bottom: 18px;
+}
+
+.banner-cancelados h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.banner-count {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.cancelados-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* ============================================ */
+/* MODAL ATRIBUIR CHEF                          */
+/* ============================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-chef {
+  background: white;
+  color: #1a1a1a;
+  border-radius: 16px;
+  padding: 24px;
+  width: 90%;
+  max-width: 420px;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.modal-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.modal-fechar {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #999;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.modal-fechar:hover {
+  background: #f5f5f5;
+  color: #1a1a1a;
+}
+
+.modal-sub {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.modal-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-chef-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border: 1.5px solid #e5e5e5;
+  border-radius: 12px;
+  background: white;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modal-chef-item:hover {
+  border-color: #8b5cf6;
+  background: #faf5ff;
+}
+
+.modal-chef-item.selecionado {
+  border-color: #8b5cf6;
+  background: #f3e8ff;
+}
+
+.chef-icone {
+  font-size: 22px;
+}
+
+/* ============================================ */
+/* RESPONSIVO                                   */
+/* ============================================ */
+@media (max-width: 1200px) {
+  .kanban, .cancelados-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .kpis-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .kanban, .cancelados-grid {
+    grid-template-columns: 1fr;
+  }
+  .kpis-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .kitchen-titulo {
+    font-size: 24px;
+  }
+}
