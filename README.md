@@ -4,12 +4,7 @@ Sistema de delivery completo desenvolvido com **Angular** e **Firebase**, permit
 
 ---
 
-## 📸 Preview
 
-> _Adicione um screenshot ou GIF da aplicação aqui_
-> `![Preview do App](./public/preview.png)`
-
----
 
 ## ✨ Funcionalidades
 
